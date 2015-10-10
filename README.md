@@ -1,4 +1,5 @@
 # Web Logger
+Autor: Gonzalo Fleitas Pastor. https://plus.google.com/u/0/+GonzaloFleitasDeveloper
 ### ¿Que es Web Logger?
 Web Logger es una herramienta creada con PHP para registrar todos los request e información de un sitio web, para debugearlo y analizarlo de manera simple.
 
