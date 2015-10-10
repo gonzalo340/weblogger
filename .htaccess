@@ -1,0 +1,5 @@
+AuthName "Ingrese las credenciales de acceso."
+AuthType Basic
+AuthUserFile /opt/lampp/htdocs/weblogger/users/users_db
+AuthGroupFile /dev/null
+require valid-user
