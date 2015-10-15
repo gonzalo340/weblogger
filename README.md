@@ -11,7 +11,7 @@ También se puede usar para crear logs de los sitios web y analizar intentos de 
 ## Instalación
 
 ### Primer paso:
-git clone git@github.com:gonzalo340/weblogger.git
+git clone https://github.com/gonzalo340/weblogger.git
 
 ### Segundo paso:
 Configurar en el archivo config.inc.php las constantes: LOG_FOLDER_NAME, LOG_FILENAME y LOG_PATH.
