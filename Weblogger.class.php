@@ -2,6 +2,7 @@
 class Weblogger {
 	private $__ip_client = null;
 	private $__user_agent = null;
+	private $__referer = null;
 	private $__date = null;
 	private $__method = null;
 	private $__filename = null;
@@ -20,6 +21,7 @@ class Weblogger {
 	private function __register(){
 		$this->__ip_client	= (isset($_SERVER['REMOTE_ADDR']))?$_SERVER['REMOTE_ADDR']:'';
 		$this->__user_agent	= (isset($_SERVER['HTTP_USER_AGENT']))?$_SERVER['HTTP_USER_AGENT']:'';
+		$this->__referer	= (isset($_SERVER['HTTP_REFERER']))?$_SERVER['HTTP_REFERER']:'';
 		$this->__date		= (isset($_SERVER['REQUEST_TIME']))?$_SERVER['REQUEST_TIME']:'';
 		$this->__method		= (isset($_SERVER['REQUEST_METHOD']))?$_SERVER['REQUEST_METHOD']:'';
 		$this->__query		= (isset($_GET))?$_GET:'';
@@ -38,6 +40,10 @@ class Weblogger {
 	
 	public function getUserAgent(){
 		return $this->__user_agent;
+	}
+	
+	public function getReferer(){
+		return $this->__referer;
 	}
 	
 	public function getDate(){
