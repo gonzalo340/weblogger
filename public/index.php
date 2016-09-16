@@ -27,10 +27,11 @@ require_once "../data.php";
 			<thead>
 			<tr>
 				<th>Fecha</th>
-				<!--<th>Agente de usuario</th>-->
+				<th>Agente de usuario</th>
 				<th>IP Cliente</th>
-				<!--<th>Cookies</th>-->
+				<th>Cookies</th>
 				<th>Dominio</th>
+				<th>Referer</th>
 				<th>URL</th>
 				<th>Metodo</th>
 				<th>Datos del POST</th>
@@ -40,10 +41,11 @@ require_once "../data.php";
 			<tfoot>
 			<tr>
 				<th>Fecha</th>
-				<!--<th>Agente de usuario</th>-->
+				<th>Agente de usuario</th>
 				<th>IP Cliente</th>
-				<!--<th>Cookies</th>-->
+				<th>Cookies</th>
 				<th>Dominio</th>
+				<th>Referer</th>
 				<th>URL</th>
 				<th>Metodo</th>
 				<th>Datos del POST</th>
@@ -55,19 +57,20 @@ require_once "../data.php";
 
 			<tr>
 				<td><?php echo date('Y-m-d H:i:s', $wlog->getDate()); ?></td>
-				<!--<td><?php echo $wlog->getUserAgent(); ?></td>-->
+				<td><?php echo $wlog->getUserAgent(); ?></td>
 				<td><?php echo $wlog->getIpClient(); ?></td>
-				<!--<td>
+				<td>
 					<ul>
 					<?php foreach($wlog->getCookies() as $key => $value): ?>
 						<li><b><?php echo $key; ?>: </b><?php echo substr($value, 0, 30); ?></li>
 					<?php endforeach; ?>
 					</ul>
-				</td>-->
+				</td>
 				<td><a href="view_register.php?i=<?php echo $count; ?>" title="Ver informaci&oacute;n detallada">
 					<?php echo get_port($wlog->getPort())." ".$wlog->getDomain()." (". $wlog->getIpServer() .")"; ?>
 					</a>
 				</td>
+				<td><?php echo $wlog->getReferer(); ?></td>
 				<td><?php echo $wlog->getRequest(); ?></td>
 				<td><?php echo $wlog->getMethod(); ?></td>
 				<td>
